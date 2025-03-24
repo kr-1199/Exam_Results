@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exam Results - KR School</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #00ff7f;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .btn-search-another {
+            display: inline-block;
+            padding: 12px 24px;
+            margin-top: 20px;
+            background-color: #00ff7f;
+            color: #000;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .result-container {
+            background-color: #1e1e1e;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 255, 127, 0.2);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #00ff7f;
+        }
+
+        table {
+            width: 100%;
+            margin: 20px 0;
+            border-collapse: collapse;
+            background-color: #2a2a2a;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #00ff7f;
+        }
+
+        th {
+            background-color: #333;
+            color: #00ff7f;
+            font-weight: bold;
+        }
+
+        td {
+            color: #fff;
+        }
+
+        tr:hover {
+            background-color: #333;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #aaa;
+        }
+    </style>
+     </style>
+     <script>
+         function printResult() {
+             window.print();
+         }
+     </script>
+</head>
+<body>
+    <div class="result-container">
+        <h2>Exam Results</h2>
+        <table>
+            <tr><th>Name</th><td>{{ student.name }}</td></tr>
+            <tr><th>Hall Ticket</th><td>{{ student.hall_ticket }}</td></tr>
+            <tr><th>Telugu</th><td>{{ student.telugu }}</td></tr>
+            <tr><th>Hindi</th><td>{{ student.hindi }}</td></tr>
+            <tr><th>English</th><td>{{ student.english }}</td></tr>
+            <tr><th>Maths</th><td>{{ student.maths }}</td></tr>
+            <tr><th>Science</th><td>{{ student.science }}</td></tr>
+            <tr><th>Social</th><td>{{ student.social }}</td></tr>
+            <tr><th>Obtained Marks</th><td>{{ student.obtained_marks }}</td></tr>
+            <tr><th>Total Marks</th><td>{{ student.total_marks }}</td></tr>
+            <tr><th>Percentage</th><td>{{ student.percentage|floatformat:2 }}%</td></tr>
+        </table>
+          <!-- Search Another Number Button -->
+        <a href="/" class="btn-search-another">Search Another Number</a>
+        <button class="btn-search-another" onclick="printResult()">Print Result</button>
+        <footer>&copy; 2025 KR School Portal</footer>
+    </div>
+</body>
+</html>
